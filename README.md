@@ -20,6 +20,6 @@ Steps to run this project<br>
 <ul>
    <li><i>Open another terminal to execute the angular app, which can be accessed through the "saul" directory</i></li>
     <ul>
-      <li>Once your in the client directory, please type in "npm start"</li>
+      <li>Once your in the client directory, please type in "npm install" followed by "npm start"</li>
       <li>Angular Route --- localhost:4200</li>
 </ul>
