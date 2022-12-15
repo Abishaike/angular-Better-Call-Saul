@@ -1,0 +1,37 @@
+<form #deleteForm="ngForm" (ngSubmit)="deleteSubmit()">
+  <div class="form-group">
+    <div ngModelGroup="apptDelete" #apptDelete="ngModelGroup">
+
+      <label for="uuid">UUID</label>
+      <select id="uuid" name="uuid" ngModel #uuid="ngModel" class="form-select form-control-lg" required>
+        <option *ngFor="let item of apptDetails" [value]="item.UUID">
+          UUID: {{item.UUID}}
+        </option>
+      </select>
+
+      <div class="text-center">
+        <button class="btn btn-primary" [disabled]="deleteForm.invalid">Submit</button>
+      </div>
+
+    </div>
+  </div>
+</form>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <img [src]="mikeImgURL" class="img-thumbnail border border-secondary bg-success">
+    </div>
+    <div class="col-sm">
+      <img [src]="saulImgURL" class="img-thumbnail border border-secondary bg-success">
+    </div>
+    <div class="col-sm">
+      <img [src]="saulImg2URL" class="img-thumbnail border border-secondary bg-success">
+    </div>
+  </div>
+</div>
+
+<div *ngIf="apptUUID">
+  <h1 class="text-center">Appointment "{{apptUUID}}"" has been deleted.</h1>
+  <img [src]="logoImgURL" class="logo">
+</div>

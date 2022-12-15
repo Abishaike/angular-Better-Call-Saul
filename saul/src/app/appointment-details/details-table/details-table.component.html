@@ -1,0 +1,18 @@
+<table class="table table-bordered table-hover">
+  <thead class="text-center">
+    <tr>
+      <th scope="col">UUID</th>
+      <th scope="col">Date</th>
+      <th scope="col">Client Name</th>
+      <th scope="col">Comments</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let appt of apptDetailsC">
+      <td class="text-center">{{ appt.UUID }}</td>
+      <td class="text-center">{{ appt.date }}</td>
+      <td class="text-center">{{ appt.firstName }} {{ appt.lastName }}</td>
+      <td class="text-left">{{ appt.comments }}</td>
+    </tr>
+  </tbody>
+</table>

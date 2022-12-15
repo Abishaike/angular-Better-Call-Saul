@@ -1,0 +1,45 @@
+<form #modifyForm="ngForm" (ngSubmit)="modifySubmit()">
+  <div class="form-group">
+    <div ngModelGroup="apptModify" #apptModify="ngModelGroup">
+
+      <label for="uuid">UUID</label>
+      <select id="uuid" name="uuid" ngModel #uuid="ngModel" class="form-select form-control-lg" required>
+        <option *ngFor="let item of apptDetails" [value]="item.UUID">
+          UUID: {{item.UUID}}
+        </option>
+      </select>
+
+      <label for="comment">Comments</label>
+      <textarea id="comment" cols="30" rows="10" ngModel name="comments" #comment="ngModel"
+                class="form-control"></textarea>
+
+      <div class="text-center">
+        <button class="btn btn-primary" [disabled]="modifyForm.invalid">Submit</button>
+      </div>
+
+    </div>
+  </div>
+</form>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h2 class="text-center">Modified Appointment Details</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h3>Date: {{date}}</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h3>Appointment ID: {{apptUUID}}</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h3 class="text-wrap">Updated Comments: {{comments}}</h3>
+    </div>
+  </div>
+</div>

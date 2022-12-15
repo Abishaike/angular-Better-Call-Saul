@@ -1,0 +1,32 @@
+.sidenav-container {
+  height: 100%;
+
+}
+
+.sidenav {
+  width: 200px;
+  /* added */
+  background-color: gainsboro;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.8em;
+  color: rgb(238, 0, 221);
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+span {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5em;
+}
+
+.nav-option:hover {
+  background-color: gray;
+}

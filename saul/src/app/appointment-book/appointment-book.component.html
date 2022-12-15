@@ -1,0 +1,90 @@
+<form #bookForm="ngForm" (ngSubmit)="bookSubmit()">
+  <div class="form-group">
+    <div ngModelGroup="apptDetails" #apptDetails="ngModelGroup">
+
+      <!-- Start of First Name Portion -->
+      <label for="fname">First Name</label>
+
+      <input type="text" id="fname" name="firstName" ngModel required #fname="ngModel" minlength="2" pattern="[A-Za-z]+"
+             required class="form-control">
+
+      <div class="alert alert-danger" *ngIf="fname.touched && fname.invalid">
+
+        <div *ngIf="fname.errors?.['required']">
+          First Name field is empty
+        </div>
+        <div *ngIf="fname.errors?.['minlength']">
+          First name must be longer than 1 character
+        </div>
+        <div *ngIf="fname.errors?.['pattern']">
+          First name cannot include a number, space or special character
+        </div>
+
+      </div>
+      <!-- End of First Name Portion -->
+
+      <!-- Start of Last Name Portion -->
+      <label for="lname">Last Name</label>
+
+      <input type="text" id="lname" name="lastName" ngModel required #lname="ngModel" minlength="2" pattern="[A-Za-z]+"
+             required class="form-control">
+
+      <div class="alert alert-danger" *ngIf="lname.touched && lname.invalid">
+
+        <div *ngIf="lname.errors?.['required']">
+          Last Name field is empty
+        </div>
+        <div *ngIf="lname.errors?.['minlength']">
+          Last name must be longer than 1 character
+        </div>
+        <div *ngIf="lname.errors?.['pattern']">
+          Last name cannot include a number or special character
+        </div>
+
+      </div>
+      <!-- End of Last Name Portion -->
+
+      <label for="comment">Comments</label>
+      <textarea id="comment" cols="30" rows="10" ngModel name="comments" #comment="ngModel"
+                class="form-control"></textarea>
+
+      <div class="text-center">
+        <button class="btn btn-primary" [disabled]="bookForm.invalid">Submit</button>
+      </div>
+
+    </div>
+  </div>
+</form>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h2 class="text-center">Submitted Appointment Details</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h3>Date: {{date}}</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h3>Appointment ID: {{apptUUID}}</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h3>First Name: {{firstName}}</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h3>Last Name: {{lastName}}</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h3 class="text-wrap">Comments: {{comments}}</h3>
+    </div>
+  </div>
+</div>

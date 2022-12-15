@@ -1,0 +1,9 @@
+/*
+  display:block
+      1) Used to remove the white space that is present at the bottom of the image
+*/
+img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}

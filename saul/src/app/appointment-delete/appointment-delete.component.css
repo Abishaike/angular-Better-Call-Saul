@@ -1,0 +1,27 @@
+.form-group {
+  margin-top: 1%;
+}
+
+.form-group button {
+  margin: 1%;
+}
+
+button:valid {
+  background-color: #28a745;
+}
+
+
+img {
+  margin-bottom: 3%;
+}
+
+.logo {
+  width: 30%;
+  height: 30%;
+  margin-left: 35%;
+}
+
+h1 {
+  font-family: 'Courgette', cursive;
+  font-size: 1.8em;
+}
